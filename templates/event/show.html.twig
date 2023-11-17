@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- Existing content -->
+
+<h2>Ledige sesongbilletter</h2>
+<ul>
+    {% for ticket in seasonalTicketsForEvent %}
+        <li>
+            {{ ticket.name }} - Pris: {{ ticket.price }}
+            <a href="{{ path('seasonal_ticket_purchase', {'id': ticket.id}) }}">Kjøp</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
