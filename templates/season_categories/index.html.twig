@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sesongkategorier{% endblock %}
+
+{% block body %}
+<h1>Sesongkategorier</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Navn</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for category in seasonCategories %}
+        <tr>
+            <td>{{ category.name }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

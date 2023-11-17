@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sesongbilletter{% endblock %}
+
+{% block body %}
+<h1>Sesongbilletter</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Navn</th>
+            <th>Inkluderte Hendelser</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for ticket in seasonalTickets %}
+        <tr>
+            <td>{{ ticket.name }}</td>
+            <td>
+                {% for event in ticket.events %}
+                    {{ event.name }}{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
